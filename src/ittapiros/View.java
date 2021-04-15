@@ -5,6 +5,10 @@
  */
 package ittapiros;
 
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author win10
@@ -27,12 +31,12 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        btnElso = new javax.swing.JButton();
+        btnMasodik = new javax.swing.JButton();
+        btnHarmadik = new javax.swing.JButton();
+        pnVisszajelzes = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        cbValtoztat = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -40,32 +44,52 @@ public class View extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        negyPohar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Első pohár");
+        btnElso.setText("Első pohár");
+        btnElso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElsoActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Második pohár");
+        btnMasodik.setText("Második pohár");
+        btnMasodik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMasodikActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Harmadik pohár");
+        btnHarmadik.setText("Harmadik pohár");
+        btnHarmadik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHarmadikActionPerformed(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        pnVisszajelzes.setBackground(new java.awt.Color(102, 102, 102));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnVisszajelzesLayout = new javax.swing.GroupLayout(pnVisszajelzes);
+        pnVisszajelzes.setLayout(pnVisszajelzesLayout);
+        pnVisszajelzesLayout.setHorizontalGroup(
+            pnVisszajelzesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 53, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnVisszajelzesLayout.setVerticalGroup(
+            pnVisszajelzesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
         jLabel1.setText("Visszajelzés: ");
 
-        jCheckBox1.setText("Helyzet változtatás");
+        cbValtoztat.setText("Helyzet változtatás");
+        cbValtoztat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbValtoztatActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
 
@@ -90,8 +114,13 @@ public class View extends javax.swing.JFrame {
         jMenuItem2.setText("3 pohár");
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("4 pohár");
-        jMenu2.add(jMenuItem3);
+        negyPohar.setText("4 pohár");
+        negyPohar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                negyPoharActionPerformed(evt);
+            }
+        });
+        jMenu2.add(negyPohar);
 
         jMenuBar1.add(jMenu2);
 
@@ -105,19 +134,19 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnElso)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton2)
+                        .addComponent(btnMasodik)
                         .addGap(34, 34, 34)
-                        .addComponent(jButton3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnHarmadik)
+                        .addGap(0, 5, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(cbValtoztat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(37, 37, 37)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98))))
+                        .addGap(18, 18, 18)
+                        .addComponent(pnVisszajelzes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,26 +154,49 @@ public class View extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbValtoztat)
+                            .addComponent(pnVisszajelzes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jCheckBox1))))
-                .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(67, Short.MAX_VALUE))
+                    .addComponent(btnElso)
+                    .addComponent(btnMasodik)
+                    .addComponent(btnHarmadik))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+        
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btnElsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElsoActionPerformed
+            pnVisszajelzes.setBackground(Color.GREEN);
+    }//GEN-LAST:event_btnElsoActionPerformed
+
+    private void btnMasodikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasodikActionPerformed
+        pnVisszajelzes.setBackground(Color.RED);
+    }//GEN-LAST:event_btnMasodikActionPerformed
+
+    private void btnHarmadikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHarmadikActionPerformed
+        pnVisszajelzes.setBackground(Color.RED);
+    }//GEN-LAST:event_btnHarmadikActionPerformed
+
+    private void cbValtoztatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbValtoztatActionPerformed
+       
+    }//GEN-LAST:event_cbValtoztatActionPerformed
+
+    private void negyPoharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negyPoharActionPerformed
+       JFrame frame = new JFrame("Válasz");
+        
+           JOptionPane.showMessageDialog(frame, "Ez a mód jelenleg nem elérhető");
+        
+    }//GEN-LAST:event_negyPoharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,19 +234,19 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton btnElso;
+    private javax.swing.JButton btnHarmadik;
+    private javax.swing.JButton btnMasodik;
+    private javax.swing.JCheckBox cbValtoztat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem negyPohar;
+    private javax.swing.JPanel pnVisszajelzes;
     // End of variables declaration//GEN-END:variables
 }
