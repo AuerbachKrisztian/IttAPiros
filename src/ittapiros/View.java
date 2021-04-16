@@ -207,7 +207,7 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_negyPoharActionPerformed
 
     private void mentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mentesActionPerformed
-       File fajl = new File("C:/mentes.ak");
+       File fajl = new File("C:/config bin");
         if (!fajl.exists()) {
             try {
                 fajl.createNewFile();
