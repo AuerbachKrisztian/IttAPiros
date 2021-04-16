@@ -6,8 +6,11 @@
 package ittapiros;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static sun.net.www.http.HttpClient.New;
 
 /**
  *
@@ -39,7 +42,7 @@ public class View extends javax.swing.JFrame {
         cbValtoztat = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        mentes = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -93,8 +96,13 @@ public class View extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem4.setText("mentes");
-        jMenu1.add(jMenuItem4);
+        mentes.setText("mentes");
+        mentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mentesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mentes);
 
         jMenuItem5.setText("betöltés");
         jMenu1.add(jMenuItem5);
@@ -198,6 +206,15 @@ public class View extends javax.swing.JFrame {
         
     }//GEN-LAST:event_negyPoharActionPerformed
 
+    private void mentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mentesActionPerformed
+       File fajl = new File("C:/mentes.ak");
+        if (!fajl.exists()) {
+            try {
+                fajl.createNewFile();
+            }catch (IOException ex){}
+        }
+    }//GEN-LAST:event_mentesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,8 +261,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem mentes;
     private javax.swing.JMenuItem negyPohar;
     private javax.swing.JPanel pnVisszajelzes;
     // End of variables declaration//GEN-END:variables
